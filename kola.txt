@@ -1,0 +1,188 @@
+I am learning Programming skills in python.
+I love Python - It is easy to understand and write.
+Pycharm is the best IDE for python.
+Try it and easyI am getting itI am getting it
+I am getting it
+I am getting it
+using read, write and read of text file in python
+file = open("kola.txt", "a")
+print(file.write("\nI am getting it"))
+file.close()
+
+file = open("kola.txt", "r")
+print(file.readlines()[0])
+file.close()
+
+
+
+
+def initials(phrase):
+    words = phrase.split()
+    result = ""
+    for word in words:
+        result += word[0]
+    return result.upper()
+print(initials("Local Area Network"))
+
+
+def initials (number):
+    dm = number.split()
+    outcome =""
+    for x in dm:
+        outcome += x[0]
+    return outcome.upper()
+print(initials("Local Area Network"))
+
+
+You can also put a formatting expression inside the curly brackets, which lets you alter the way the string is formatted.
+For example, the formatting expression {:.2f} means that you’d format this as a float number, with two digits after the decimal dot.
+The colon acts as a separator from the field name, if you had specified one.
+You can also specify text alignment using the greater than operator: >.
+For example, the expression {:>3.2f} would align the text three spaces to the right, as well as specify a float number with two decimal places.
+String formatting can be very handy for outputting easy-to-read textual output.
+
+def replace_ending(sentence, old, new):
+    # Check if the old string is at the end of the sentence
+    if sentence.endswith(old):
+        i = len(old)
+        new_sentence = sentence[:-i] + new
+        return new_sentence
+
+    # Return the original sentence if there is no match
+    return sentence
+
+def file_size(file_info):
+	name, Type, size= file_info
+	return("{:.2f}".format(size / 1024))
+
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+
+
+
+
+
+print(replace_ending("It's raining cats and cats", "cats", "dogs"))
+# Should display "It's raining cats and dogs"
+print(replace_ending("She sells seashells by the seashore", "seashells", "donuts"))
+# Should display "She sells seashells by the seashore"
+
+
+Using Modules in Python
+import kola.txt
+
+check the websites for python modules and third party module.
+we have built in modules and external modules.
+
+name = input ("Please enter your first name: ")
+age = input ("Please enter your age: ")
+sex = input ("Please enter your sex: ")
+
+def member (name, age, sex):
+    print("You are {}. you are {} years old and a {}".format(name,age,sex))
+result = member(name, age, sex)
+
+print(result)
+
+def full_email(people):
+    result = []
+    for email, name in people:
+       result.append("{} <{}> ".format(name, email))
+
+    return result
+print(full_email([("kolawole.opatoye@gmail.com", "Kolawole Opatoye")]))
+
+
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate newfilenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+newfilenames=[x.replace(".hpp",".h") for x in filenames]
+
+print(newfilenames)
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+
+
+def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  words = text.split()
+  for word in words:
+    # Create the pig latin word and add it to the list
+    endString = str(word[1]).upper()+str(word[2:])
+    them = endString, str(word[0:1]).lower(), 'ay'
+    word = ''.join(them)
+
+    # Turn the list back into a phrase
+  return word
+
+
+Let's create a function that turns text into pig latin:
+a simple text transformation that modifies each word moving
+the first character to the end and appending "ay" to the end.
+For example, python ends up as ythonpay.
+  def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  words = text.split()
+  pigged_text = []
+  for word in words:
+    # Create the pig latin word and add it to the list
+    word = word[1:] + word[0] + 'ay'
+    pigged_text.append(word)
+
+
+    # Turn the list back into a phrase
+  return ' '.join(pigged_text)
+
+  def group_list(group, users):
+  members = ', '.join(users)
+
+  return "{}: {}".format(group, members)
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"]))
+
+def guest_list(guests):
+	for guest in guests:
+		name,age,occupation = guest
+		print("{} is {} years old and works as {}".format(name,age,occupation))
+
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
+#tuple in a list
+
+file_count = {"jpg":10,"csv":2, "docx":11, "ppt":3}
+for extension in file_count:
+    print (extension)
+
+file_count = {"jpg":10,"csv":2, "docx":11, "ppt":3}
+for extension in file_count:
+    print (extension)
+file_count["jpg"] =15
+file_count["cdx"] =1
+print ("ppt" in file_count)
+print(file_count)
+
+file_count = {"jpg":10,"csv":2, "docx":11, "ppt":3}
+for amount,extension in file_count.items():
+
+    print("There are  {} files in {} extension!".format(extension, amount))
+f=file_count.values()
+print(f)
+d=file_count.keys()
+print(d)
+
+You can iterate over dictionaries using a for loop, just like with strings, lists, and tuples.
+This will iterate over the sequence of keys in the dictionary.
+If you want to access the corresponding values associated with the keys,
+you could use the keys as indexes.
+Or you can use the items method on the dictionary, like dictionary.items().
+This method returns a tuple for each element in the dictionary,
+where the first element in the tuple is the key and the second is the value.
+
+wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+for clothes, colors in wardrobe.items():
+	for color in colors:
+		print("{} {}".format(color,clothes))
+
+If you only wanted to access the keys in a dictionary, you could use the keys() method on the dictionary: dictionary.keys(). If you only wanted the values, you could use the values() method: dictionary.values().
