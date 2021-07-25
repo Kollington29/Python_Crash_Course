@@ -1,0 +1,270 @@
+class Apple:
+...     def __init__(self, color, flavor):
+...         self.color = color
+...         self.flavor = flavor
+...     def __str__(self):
+...         return "This apple is {} and its flavor is {}".format(self.color, self.flavor)
+...
+>>> help(Apple)
+Help on class Apple in module __main__:
+
+class Apple(builtins.object)
+ |  Methods defined here:
+ |
+ |  __init__(self, color, flavor)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __str__(self)
+ |      Return str(self).
+
+ def to_seconds(hours, minutes, seconds):
+      """Returns the amount of seconds in the given hours, minutes and seconds."""
+      return hours*3600+minutes*60+seconds
+help(to_seconds)
+
+# Class inheritance- A class inheriting attribute and methods from another class/.
+class Clothing:
+  material = ""
+  def __init__(self,name):
+    self.name = name
+  def checkmaterial(self):
+	  print("This {} is made of {}".format(self.name,self.material))
+
+class Shirt(Clothing):
+  material="Cotton"
+
+polo = Shirt("Polo")
+polo.checkmaterial()
+
+Inheritance allows us to define attributes or methods that are shared by all types of fruit without
+having to define them in each fruit class individually. We can then also define specific attributes or
+methods that are only relevant for a specific type of fruit. Let's look at another example, this time with animals:
+
+
+class Animal:
+...     sound = ""
+...     def __init__(self, name):
+...         self.name = name
+...     def speak(self):
+...         print("{sound} I'm {name}! {sound}".format(
+...             name=self.name, sound=self.sound))
+...
+>>> class Piglet(Animal):
+...     sound = "Oink!"
+...
+>>> class Cow(Animal):
+...     sound = "Moooo"
+
+import datetime
+>>> now = datetime.datetime.now()
+>>> type(now)
+<class 'datetime.datetime'>
+>>> print(now)
+2019-04-24 16:54:55.155199
+
+
+teams = ["wolves","Pandas", "Dragon", "Unicorn"]
+for home_teams in teams:
+    for away_teams in teams:
+        print ( home_teams + " vs " + away_teams)
+
+def even_numbers(maximum):
+	return_string = ""
+	for x in range (maximum + 1):
+		if x > 0 and x % 2 == 0:
+		   return_string += str(x) + " "
+	return return_string.strip()
+
+print(even_numbers(6))  # Should be 2 4 6
+
+print ("God is goog all the time! \n\t\t It is good to serve the Lord.\n\t Him alone is worthy of pur praise! Halleluyah!")
+
+import sys
+print(sys.version)
+
+import datetime
+now = datetime.datetime.now()
+print ("Current date and time : ")
+print(now)
+print (now.strftime("%Y-%m-%d %H:%M:%S"))
+
+from math import pi
+r = float(input ("Input the radius of the circle : "))
+print ("The area of the circle with radius " + str(r) + " is: " + str(pi * r**2))
+
+Changing email to new_domain:
+def new_domain( email, old_domain, new_domain):
+     if "@" + old_domain in email:
+         index = email.index("@" + old_domain)
+         new_email = email[:index] + "@" + new_domain
+         return new_email
+     return email
+print(new_domain("kolawole.opatoye@gloworld.com", "gloworld.com", "googletech.com"))
+
+def new_domain(email, old_domain, new_domain):
+     if "@" + old_domain in email:
+         var = email.index("@")
+         new_email = email[:var] + "@" + new_domain
+         return new_email
+     return email
+print(new_domain("kolawole.opatoye@gloworld.com", "gloworld.com", "googletech.com"))
+
+def skip_elements(elements):
+	# Initialize variables
+	new_list = []
+	i = 0
+
+	# Iterate through the list
+	for x in elements:
+		# Does this element belong in the resulting list?
+		if i <= len(elements):
+			# Add this element to the resulting list
+			new_list.append(elements[i])
+		# Increment i
+		i +=2
+
+	return new_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+
+some methods attributed to list(Data Structures)
+list = ["apple", "orange", "banana","peanut","Guava"]
+list.append("melon")
+list.insert(6, "cherry")
+list.remove("cherry")
+list.pop(0)
+print(list)
+
+def seconds_conversion(seconds):
+    hour = seconds // 3600
+    minute = (seconds - hour * 3600)// 60
+    remaining_seconds = hour * 3600 - minute * 60
+    return hour, minute, remaining_seconds
+print (seconds_conversion(5000))
+
+Using Tuple to Return three values
+def file_size(file_info):
+	filename, filetype, filesize= file_info
+	return("{:.2f}".format(filesize / 1024))
+
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+
+TUPLES
+def area_name (name):
+    name = 100//2
+    size = name * 2
+    length = name * size
+    return name, size, length
+print(area_name(1000))
+
+teams = ["wolves","Pandas", "Dragon", "Unicorn"]
+for index, name in enumerate(teams):
+    print("{},{}".format(index, name))
+## The first variable prints "index" while the second "name" varable prints each item in the list.
+
+
+def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  words = text.split()
+  pigged_text = []
+  for word in words:
+    # Create the pig latin word and add it to the list
+    word = word[1:] + word[0] + 'ay'
+    pigged_text.append(word)
+
+
+    # Turn the list back into a phrase
+  return ' '.join(pigged_text)
+
+print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
+
+DICTIONARY and Methods
+file_counts = {"jpg":2, "ppt":10, "docx":12, "png":13, "exe":16}
+p= file_counts["jpg"]
+print(p)
+print( "png" in file_counts)
+print("html" in file_counts)
+file_counts["csv"] = 18
+file_counts["csv"] = 22
+print(file_counts)
+del file_counts["csv"]
+print(file_counts)
+for ext in file_counts:
+    print(ext)
+for ext, size in file_counts.items():
+    print("There are {} files in the extension {}.".format(size, ext))
+for val in file_counts.values():
+    print(val)
+for key in file_counts.keys():
+    print(key)
+DICTIONARY:
+def count_letters (text):
+    result ={}
+    for letter in text:
+        if letter not in result:
+            result[letter] = 0
+        result[letter] +=1
+    return result
+print(count_letters("Kolawole"))
+
+Checking methods and functions
+using help and dir
+Constructing a Class with attribuites and methods
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        return "hi, my name is {}".format(self.name)
+
+# Create a new instance with a name of your choice
+some_person = Person("Kolawole")
+# Call the greeting method
+print(some_person.greeting())
+
+class Person:
+    def __init__(self, name,age,tribe):
+        self.name = name
+        self.age = age
+        self.tribe = tribe
+
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        return "hi, my name is {}. I am {} years old. I am {} by tribe".format(self.name, self.age, self.tribe)
+    def __str__(self):
+        return "This is {} greeting function".format(self.name)
+
+# Create a new instance with a name of your choice
+some_person = Person("Kolawole","23","yoruba")
+# Call the greeting method
+print(some_person.greeting())
+
+print(some_person)
+
+class Apple:
+...     def __init__(self, color, flavor):
+...         self.color = color
+...         self.flavor = flavor
+...     def __str__(self):
+...         return "This apple is {} and its flavor is {}".format(self.color, self.flavor)
+...
+>>> help(Apple)
+Help on class Apple in module __main__:
+
+Class Inheritance
+class Clothing:
+  material = ""
+  def __init__(self,name):
+    self.name = name
+  def checkmaterial(self):
+	  print("This {} is made of {}".format(self.name,self.material))
+
+class Shirt(Clothing):
+  material="Cotton"
+
+polo = Shirt("Polo")
+polo.checkmaterial()
