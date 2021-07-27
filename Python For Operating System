@@ -1,0 +1,7 @@
+The fundamental ideas of how Linux works today are based on the Unix principles.
+A lot of the tools that we use to interact with the operating system are open source versions
+ of those originally developed for Unix. This is why these tools in operating principles are usually
+ referred to as Unix. Even though the OS we're using is called Linux. So Linus created Linux which is based on Unix.
+ It's basically a programming tongue-twister. Try saying it 10 times fast. The Mac OS kernel
+ and some of its user space are also based on a kernel and User space tools from the Unix family known as BSD.
+ So although the graphical interface is extremely different between the two, the command line is actually pretty similar. Like we said earlier in this course, we'll use Python to interact with the operating system. Python is a cross-platform language.
