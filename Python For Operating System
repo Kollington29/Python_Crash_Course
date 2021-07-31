@@ -4,4 +4,83 @@ A lot of the tools that we use to interact with the operating system are open so
  referred to as Unix. Even though the OS we're using is called Linux. So Linus created Linux which is based on Unix.
  It's basically a programming tongue-twister. Try saying it 10 times fast. The Mac OS kernel
  and some of its user space are also based on a kernel and User space tools from the Unix family known as BSD.
- So although the graphical interface is extremely different between the two, the command line is actually pretty similar. Like we said earlier in this course, we'll use Python to interact with the operating system. Python is a cross-platform language.
+ So although the graphical interface is extremely different between the two, the command line is actually pretty similar.
+ Like we said earlier in this course, we'll use Python to interact with the operating system. Python is a cross-platform language.
+
+ TO GET INFO FROM A WEBSITE WE NEED THR REQUEST MODULE INSTALL
+ pip install request on the cmd
+ import requests on the interpreter
+response = get("https://www.google.com")
+len(response.text)
+LINUX
+python3 --version
+sudo apt install python3-pil  (PIL:Python Imaging Library) for image manipulation
+import PIL.Image
+image = PIL.Image.open("JOHNSON.jpg")
+print(image.size)
+print(image.format)
+sudo apt install python3-pip for python 3 modules
+TO INSTALL PANDAS MODULES USE FOR DATA MANIPULATION
+pip3 install pandas to generate error log and statistics
+import pandas
+visitors = [123, 453, 567, 333, 456,]
+errors = [23, 45, 12, 10, 91]
+df =pandas.dataframe({"visitors": visitors, "errors": "errors"},index = ["Mon", "Tue", "Wed", "Thurs", "Fri"])
+print(df)
+df.["errors"].mean()
+
+making a file executable
+chmod +x pythonfile.py
+you can now run with ./
+
+Shebang line! Inserting a shebang line (such as #!/usr/bin/env python3)
+as the first line tells the operating system what command we want to use to execute the script.
+
+Creating your own python module
+
+code reuse:using code already written by someonelse
+1. write your code
+2. save with py extension
+3. import it as in "import as filename"
+4. use as appropriate
+
+What is an IDE
+These are code editors with additional functionalities that helps in writing codes
+
+Awesome! The Pareto Principle states that 20% of the system administration tasks you
+perform are responsible for 80% of your workload. Therefore, identifying and automating
+those tasks will put your productivity through the roof!
+PRACTICAL AUTOMATION EXAMPLES:
+import shutil
+du = shutil.disk_usage("/")
+print(du)
+
+Average
+du.free/total*100
+
+CPU USAGE:
+import psutil
+psutil.cpu_percent(0.1)
+
+/#!usr/bin/env
+import shutil
+import psutil
+def check_disk_usage(disk):
+    du = shutil.disk
+    free = du.free/du.total*100
+    return free
+
+def check_cpu_usage():
+    usage = psutil.cpu_percent(1)
+    return usage < 75
+if not check_disk_usage("/") or not check cpu_usage():
+       print("error!")
+   else:
+   print("Everything is ok!")
+1.save the file with a name in py extension
+2. import to python interpreter
+3. chmnod +x filename.py
+4../he
+
+
+
